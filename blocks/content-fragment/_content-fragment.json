@@ -1,0 +1,98 @@
+{
+  "definitions": [
+    {
+      "title": "Content Fragment",
+      "id": "content-fragment",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Content Fragment",
+              "model": "content-fragment"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "content-fragment",
+      "fields": [
+        {
+          "component": "aem-content-fragment",
+          "valueType": "string",
+          "name": "fragment",
+          "label": "Content fragment",
+          "description": "A Feature List, Cover Levels, Cover Comparison, Media Text or Product Pod List fragment under your DAM folder",
+          "rootPath": "/content/dam",
+          "required": true,
+          "variationName": "fragmentVariation"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "fragmentVariation",
+          "label": "Selected variation",
+          "value": "",
+          "description": "Stored by the fragment picker; empty means master.",
+          "condition": {
+            "==": [
+              {
+                "var": "__alwaysFalse"
+              },
+              true
+            ]
+          }
+        },
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Display",
+          "valueType": "string",
+          "description": "How this page shows the shared content. Cover Levels and Cover Comparison fragments show as tables, Media Text as an image beside the copy, Product Pod Lists as product cards.",
+          "options": [
+            {
+              "name": "Alternating (large illustrations)",
+              "value": "alternating"
+            },
+            {
+              "name": "Pods",
+              "value": "pods"
+            },
+            {
+              "name": "Pods (colours, with icons)",
+              "value": "pods-colours"
+            },
+            {
+              "name": "Accordion (Feature List: questions and answers)",
+              "value": "accordion"
+            },
+            {
+              "name": "Tabs (Feature List: one tab per feature)",
+              "value": "tabs"
+            },
+            {
+              "name": "Numbered steps (Feature List)",
+              "value": "steps"
+            },
+            {
+              "name": "Step arrows (with Numbered steps)",
+              "value": "arrows"
+            },
+            {
+              "name": "Hide heading",
+              "value": "no-heading"
+            },
+            {
+              "name": "Image on the right (Media Text)",
+              "value": "image-right"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

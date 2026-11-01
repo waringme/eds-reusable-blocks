@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Responsive block fixtures</title>
+    <style>
+      body { margin: 16px; font: 16px Arial, sans-serif; }
+      iframe { display: block; border: 1px solid #ccc; height: 900px; margin-bottom: 32px; }
+    </style>
+  </head>
+  <body>
+    <h1>Responsive offline fixtures</h1>
+    <p>Each iframe has a real independent CSS viewport. Backend and agent calls are stubbed.</p>
+    <h2>Mobile: 360px</h2><iframe title="Mobile fixtures" width="360" src="/tests/preview.html"></iframe>
+    <h2>Tablet: 768px</h2><iframe title="Tablet fixtures" width="768" src="/tests/preview.html"></iframe>
+    <h2>Desktop: 1200px</h2><iframe title="Desktop fixtures" width="1200" src="/tests/preview.html"></iframe>
+  </body>
+</html>

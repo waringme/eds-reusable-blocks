@@ -1,0 +1,32 @@
+# Get a cover levels content fragment (and its rows) by path.
+#
+# Persist under your configured namespace as cover-levels-by-path; execute with
+#   GET /graphql/execute.json/example/cover-levels-by-path;path=/content/dam/example/fragments/levels
+# (path is passed unencoded; add ;variation=<name> for a variation other than master)
+
+query getCoverLevelsByPath($path: String!, $variation: String = "master") {
+  coverLevelsByPath(_path: $path, variation: $variation) {
+    item {
+      _path
+      title
+      introduction {
+        html
+      }
+      goodToKnow {
+        html
+      }
+      column1
+      column2
+      column3
+      levels {
+        ... on CoverLevelModel {
+          _path
+          benefit
+          value1
+          value2
+          value3
+        }
+      }
+    }
+  }
+}

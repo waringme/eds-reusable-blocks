@@ -1,0 +1,46 @@
+# Get a product pod list content fragment (and its pods) by path.
+#
+# Persist under your configured namespace as product-pod-list-by-path; execute with
+#   GET /graphql/execute.json/example/product-pod-list-by-path;path=/content/dam/example/fragments/products
+# (path is passed unencoded; add ;variation=<name> for a variation other than master)
+# SVG assets resolve as DocumentRef, raster images as ImageRef; the link is a site page (PageRef).
+
+query getProductPodListByPath($path: String!, $variation: String = "master") {
+  productPodListByPath(_path: $path, variation: $variation) {
+    item {
+      _path
+      title
+      introduction {
+        html
+      }
+      pods {
+        ... on ProductPodModel {
+          _path
+          title
+          description {
+            html
+          }
+          image {
+            ... on ImageRef {
+              _path
+              _authorUrl
+              _publishUrl
+            }
+            ... on DocumentRef {
+              _path
+              _authorUrl
+              _publishUrl
+            }
+          }
+          imageAlt
+          link {
+            ... on PageRef {
+              _path
+            }
+          }
+          linkText
+        }
+      }
+    }
+  }
+}

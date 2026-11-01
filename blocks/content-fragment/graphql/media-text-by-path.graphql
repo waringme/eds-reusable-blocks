@@ -1,0 +1,31 @@
+# Get a media text content fragment (heading, copy and image) by path.
+#
+# Persist under your configured namespace as media-text-by-path; execute with
+#   GET /graphql/execute.json/example/media-text-by-path;path=/content/dam/example/fragments/media
+# (path is passed unencoded; add ;variation=<name> for a variation other than master)
+# SVG assets resolve as DocumentRef, raster images as ImageRef: both are selected.
+
+query getMediaTextByPath($path: String!, $variation: String = "master") {
+  mediaTextByPath(_path: $path, variation: $variation) {
+    item {
+      _path
+      title
+      text {
+        html
+      }
+      image {
+        ... on ImageRef {
+          _path
+          _authorUrl
+          _publishUrl
+        }
+        ... on DocumentRef {
+          _path
+          _authorUrl
+          _publishUrl
+        }
+      }
+      imageAlt
+    }
+  }
+}

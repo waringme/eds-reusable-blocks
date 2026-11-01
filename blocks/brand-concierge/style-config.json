@@ -1,0 +1,39 @@
+{
+  "name": "Neutral example - replace with your approved Brand Concierge export",
+  "metadata": {
+    "brandName": "Example",
+    "version": "1.0.0",
+    "language": "en",
+    "namespace": "brand-concierge"
+  },
+  "behavior": {
+    "multimodalCarousel": { "cardClickAction": "openLink" },
+    "input": { "enableVoiceInput": false, "continuousVoiceMode": false, "disableMultiline": true },
+    "chat": { "messageAlignment": "normal", "messageWidth": "100%" },
+    "privacyNotice": {
+      "title": "Example privacy notice",
+      "text": "Replace this example with your approved privacy notice. Do not enter sensitive personal information.",
+      "links": []
+    },
+    "b2bLiveChat": { "enabled": false }
+  },
+  "disclaimer": { "text": "Example configuration. Replace with approved terms before deployment.", "links": [] },
+  "text": {
+    "welcome.heading": "How can we help?",
+    "welcome.subheading": "Explore products and support.",
+    "input.placeholder": "Ask a question",
+    "input.messageInput.aria": "Type your message",
+    "input.send.aria": "Send message",
+    "error.network": "Network error. Please try again.",
+    "loading.message": "Loading..."
+  },
+  "arrays": { "welcome.examples": [] },
+  "assets": { "icons": { "company": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" role=\"img\" aria-label=\"Example\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#334155\"/></svg>" } },
+  "theme": {
+    "--font-family": "Arial, sans-serif",
+    "--color-primary": "#334155",
+    "--color-text": "#222222",
+    "--main-container-background": "#ffffff",
+    "--input-focus-outline-color": "#334155"
+  }
+}

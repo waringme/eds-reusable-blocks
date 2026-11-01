@@ -1,0 +1,78 @@
+{
+  "feature-list": {
+    "_path": "/content/dam/example/fragments/features",
+    "title": "Product benefits",
+    "introduction": { "html": "<p>Choose what works for you.</p>" },
+    "features": [
+      {
+        "_path": "/content/dam/example/fragments/feature-one",
+        "title": "Flexible cover",
+        "description": { "html": "<p>Change your options when needed.</p>" },
+        "icon": { "_path": "/content/dam/example/icon.svg" },
+        "illustration": { "_path": "/content/dam/example/illustration.svg" },
+        "imageAlt": "Example illustration"
+      },
+      {
+        "_path": "/content/dam/example/fragments/feature-two",
+        "title": "Helpful support",
+        "description": { "html": "<p>Read our support guide.</p>" }
+      }
+    ],
+    "footnote": { "html": "<p>Example content only.</p>" }
+  },
+  "cover-levels": {
+    "_path": "/content/dam/example/fragments/levels",
+    "title": "Cover levels",
+    "column1": "Basic",
+    "column2": "Standard",
+    "column3": "Extended",
+    "goodToKnow": { "html": "<p>Review your policy details.</p>" },
+    "levels": [
+      { "_path": "/content/dam/example/fragments/level", "benefit": "Support", "value1": "x", "value2": "Included", "value3": "24 hours" }
+    ]
+  },
+  "media-text": {
+    "_path": "/content/dam/example/fragments/media",
+    "title": "About our products",
+    "text": { "html": "<p>Compare options before choosing.</p>" },
+    "image": { "_path": "/content/dam/example/image.svg" },
+    "imageAlt": "Example product"
+  },
+  "product-pod-list": {
+    "_path": "/content/dam/example/fragments/products",
+    "title": "Explore products",
+    "pods": [
+      {
+        "_path": "/content/dam/example/fragments/product",
+        "title": "Example product",
+        "description": { "html": "<p>A flexible option.</p>" },
+        "image": { "_path": "/content/dam/example/product.svg" },
+        "link": { "_path": "/content/example/products/one" },
+        "linkText": "Explore"
+      }
+    ]
+  },
+  "cover-comparison": {
+    "_path": "/content/dam/example/fragments/comparison",
+    "title": "Compare options",
+    "tables": [
+      {
+        "_path": "/content/dam/example/fragments/table-one",
+        "title": "Annual",
+        "tiers": [
+          { "_path": "/content/dam/example/fragments/tier-one", "name": "Basic" },
+          { "_path": "/content/dam/example/fragments/tier-two", "name": "Plus", "logo": { "_path": "/content/dam/example/logo.svg" } }
+        ],
+        "rows": [
+          { "_path": "/content/dam/example/fragments/row-one", "benefit": "Support", "value1": "yes", "value2": "x" }
+        ]
+      },
+      {
+        "_path": "/content/dam/example/fragments/table-two",
+        "title": "Monthly",
+        "tiers": [{ "name": "Standard" }],
+        "rows": [{ "benefit": "Support", "value1": "Optional" }]
+      }
+    ]
+  }
+}

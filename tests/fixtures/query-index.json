@@ -1,0 +1,13 @@
+{
+  "total": 6,
+  "offset": 0,
+  "limit": 2000,
+  "data": [
+    { "path": "/products/one", "title": "Product One | Example", "description": "First option", "image": "/images/one.svg", "cardTitle": "One", "cardSummary": "Flexible choice", "cardLinkText": "Explore one", "cardOrder": "2", "category": "featured", "lastModified": 10 },
+    { "path": "/products/two", "title": "Product Two | Example", "description": "Second option", "image": "/images/two.svg", "cardOrder": "0", "category": "FEATURED", "lastModified": 30 },
+    { "path": "/products/nested", "title": "Nested folder", "description": "Folder landing", "image": "/images/folder.svg", "lastModified": 40 },
+    { "path": "/products/nested/three", "title": "Three", "description": "Third option", "image": "/images/three.svg", "category": "featured", "lastModified": 20 },
+    { "path": "/products/current", "title": "Current page", "description": "Exclude this page", "image": "/images/current.svg", "lastModified": 100 },
+    { "path": "/elsewhere", "title": "Outside folder", "description": "Exclude this page", "image": "/images/outside.svg", "lastModified": 100 }
+  ]
+}

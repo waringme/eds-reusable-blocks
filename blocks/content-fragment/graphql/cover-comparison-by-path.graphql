@@ -1,0 +1,55 @@
+# Get a cover comparison content fragment (its tabs, each with tiers and rows) by path.
+#
+# Persist under your configured namespace as cover-comparison-by-path; execute with
+#   GET /graphql/execute.json/example/cover-comparison-by-path;path=/content/dam/example/fragments/comparison
+# (path is passed unencoded; add ;variation=<name> for a variation other than master)
+# SVG tier logos resolve as DocumentRef, raster logos as ImageRef: both are selected.
+
+query getCoverComparisonByPath($path: String!, $variation: String = "master") {
+  coverComparisonByPath(_path: $path, variation: $variation) {
+    item {
+      _path
+      title
+      introduction {
+        html
+      }
+      tables {
+        ... on CoverTableModel {
+          _path
+          title
+          tiers {
+            ... on CoverTierModel {
+              _path
+              name
+              logo {
+                ... on ImageRef {
+                  _path
+                  _authorUrl
+                  _publishUrl
+                }
+                ... on DocumentRef {
+                  _path
+                  _authorUrl
+                  _publishUrl
+                }
+              }
+            }
+          }
+          rows {
+            ... on CoverRowModel {
+              _path
+              benefit
+              value1
+              value2
+              value3
+              value4
+            }
+          }
+        }
+      }
+      footnote {
+        html
+      }
+    }
+  }
+}

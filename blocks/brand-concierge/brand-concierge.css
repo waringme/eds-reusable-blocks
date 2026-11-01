@@ -1,0 +1,16 @@
+.brand-concierge {
+  min-height: 480px;
+  color: var(--brand-concierge-text, var(--text-color, #222));
+}
+
+.brand-concierge .brand-concierge-status {
+  margin: 0;
+  padding: 24px 0;
+  text-align: center;
+}
+
+/* These class names belong to the agent SDK, not the EDS block. */
+.brand-concierge .bc-card__image {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}

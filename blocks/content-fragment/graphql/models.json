@@ -1,0 +1,16 @@
+{
+  "description": "AEM Content Fragment model specification, not an installable content package. Names and field types must match the supplied GraphQL queries.",
+  "models": [
+    { "name": "feature", "title": "Feature", "fields": { "title": "single-line text (required)", "description": "multi-line text (HTML)", "icon": "content reference (ImageRef or DocumentRef)", "illustration": "content reference (ImageRef or DocumentRef)", "imageAlt": "single-line text" } },
+    { "name": "feature-list", "title": "Feature List", "fields": { "title": "single-line text (required)", "introduction": "multi-line text (HTML)", "features": "multiple fragment references to feature", "footnote": "multi-line text (HTML)" } },
+    { "name": "cover-level", "title": "Cover Level", "fields": { "benefit": "single-line text (required)", "value1": "single-line text", "value2": "single-line text", "value3": "single-line text" } },
+    { "name": "cover-levels", "title": "Cover Levels", "fields": { "title": "single-line text (required)", "introduction": "multi-line text (HTML)", "goodToKnow": "multi-line text (HTML)", "column1": "single-line text", "column2": "single-line text", "column3": "single-line text", "levels": "multiple fragment references to cover-level" } },
+    { "name": "media-text", "title": "Media Text", "fields": { "title": "single-line text (required)", "text": "multi-line text (HTML)", "image": "content reference (ImageRef or DocumentRef)", "imageAlt": "single-line text" } },
+    { "name": "product-pod", "title": "Product Pod", "fields": { "title": "single-line text (required)", "description": "multi-line text (HTML)", "image": "content reference (ImageRef or DocumentRef)", "imageAlt": "single-line text", "link": "content reference (PageRef)", "linkText": "single-line text" } },
+    { "name": "product-pod-list", "title": "Product Pod List", "fields": { "title": "single-line text (required)", "introduction": "multi-line text (HTML)", "pods": "multiple fragment references to product-pod" } },
+    { "name": "cover-tier", "title": "Cover Tier", "fields": { "name": "single-line text (required)", "logo": "content reference (ImageRef or DocumentRef)" } },
+    { "name": "cover-row", "title": "Cover Row", "fields": { "benefit": "single-line text (required)", "value1": "single-line text", "value2": "single-line text", "value3": "single-line text", "value4": "single-line text" } },
+    { "name": "cover-table", "title": "Cover Table", "fields": { "title": "single-line text (required)", "tiers": "multiple fragment references to cover-tier (maximum 4)", "rows": "multiple fragment references to cover-row" } },
+    { "name": "cover-comparison", "title": "Cover Comparison", "fields": { "title": "single-line text (required)", "introduction": "multi-line text (HTML)", "tables": "multiple fragment references to cover-table", "footnote": "multi-line text (HTML)" } }
+  ]
+}
