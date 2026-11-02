@@ -1,6 +1,6 @@
 # Reusable EDS blocks
 
-Portable AEM Edge Delivery Services blocks extracted from Admiral and Barclays xwalk.
+Portable AEM Edge Delivery Services blocks.
 This is a **block library**, not a configured EDS site.
 
 | Block | Capabilities | Setup and authoring |
@@ -46,10 +46,7 @@ stops its own loopback fixture server. An optional directory argument saves scre
 
 ## Provenance
 
-Adapted from `waringme/admiral-xwalk` content-fragment at
-`3a4d4d6fb6c1820815e2b1a9071560be2f2c6929`, and `waringme/barclays-xwalk`
-cards-folder and brand-concierge at `a437c563d3b67f052c5d159d30ac8beb2816767d`.
-Both source repositories use Apache-2.0; see [LICENSE](LICENSE).
+The blocks are adapted from Apache-2.0-licensed source material; see [LICENSE](LICENSE).
 The extraction modifies deployment configuration, error handling, consent, scoped neutral
 styles and documentation. Branded content, logos, fonts, hotlinked assets, importer scripts
 and the optional site-wide concierge floating link are deliberately not included.

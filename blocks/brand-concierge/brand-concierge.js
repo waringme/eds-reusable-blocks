@@ -1,5 +1,5 @@
 /**
- * Adapted from Barclays Brand Concierge. Deployment IDs have no defaults.
+ * Deployment IDs have no defaults.
  * No SDK or agent loads until configuration and explicit consent are supplied.
  */
 import { loadScript } from '../../scripts/aem.js';

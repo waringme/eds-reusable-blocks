@@ -1,8 +1,8 @@
 # Brand Concierge
 
-Page-local Adobe Experience Platform Brand Concierge integration, adapted from Barclays.
+Page-local Adobe Experience Platform Brand Concierge integration.
 Loads Adobe Web SDK 2.35.1 and the agent only after required configuration and explicit
-consent. No Barclays datastream/org IDs, fonts, logos, hotlinked assets or links are defaults.
+consent. No customer datastream/org IDs, fonts, logos, hotlinked assets or links are defaults.
 The supplied `style-config.json` is a **neutral example**, not a validated service export.
 
 ## Setup

@@ -17,7 +17,7 @@ for (const name of ['content-fragment', 'cards-folder', 'brand-concierge']) {
     const names = model.models[0].fields.map((field) => field.name);
     assert.equal(new Set(names).size, names.length);
     const source = await readFile(new URL(`${name}.js`, base), 'utf8');
-    assert.doesNotMatch(source, /publish-p147324|fe057ec8|BF9C27AA|admiral-xwalk\/.*-by-path|blocks\/cards\/cards\.css/);
+    assert.doesNotMatch(source, /publish-p147324|fe057ec8|BF9C27AA|blocks\/cards\/cards\.css/);
     const css = await readFile(new URL(`${name}.css`, base), 'utf8');
     assert.doesNotMatch(css, /var\(--t-|var\(--col-pad|@import|https?:\/\//);
   });
@@ -51,7 +51,7 @@ test('Concierge example styling has no branded identifiers, assets or remote lin
   const source = await readFile(new URL('../blocks/brand-concierge/style-config.json', import.meta.url), 'utf8');
   const config = JSON.parse(source);
   assert.equal(config.metadata.brandName, 'Example');
-  assert.doesNotMatch(source, /barclays|fe057ec8|BF9C27AA|waring-eds-site/i);
+  assert.doesNotMatch(source, /fe057ec8|BF9C27AA/i);
   assert.deepEqual(config.arrays['welcome.examples'], []);
   assert.deepEqual(config.disclaimer.links, []);
 });

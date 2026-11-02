@@ -1,5 +1,5 @@
 /**
- * Adapted from Admiral content-fragment. Rows: DAM fragment path, variation.
+ * Rows: DAM fragment path, variation.
  * Deployment settings: window.edsReusableBlocks.contentFragment (see README).
  */
 import { getMetadata } from '../../scripts/aem.js';

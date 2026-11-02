@@ -1,5 +1,5 @@
 /**
- * Adapted from Barclays cards-folder, with private styles and deployment settings.
+ * Uses source-compatible markup without customer-specific styles or deployment settings.
  * Renders source-compatible markup: ul.cards-list >
  * li.card > .card-media / .card-body / .card-foot.
  *

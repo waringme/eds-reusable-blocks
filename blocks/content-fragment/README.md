@@ -1,10 +1,10 @@
 # Content Fragment
 
-Shows a shared AEM Content Fragment in the page's chosen layout, adapted from the Admiral
-version. All five renderers and original display options are retained. Its private CSS
+Shows a shared AEM Content Fragment in the page's chosen layout. All five renderers and
+original display options are retained. Its private CSS
 replaces the source's dynamic dependencies on features, highlights, comparison-table,
 callout, media-text, accordion and cards styles, so it can coexist with Cards Folder.
-Colors and spacing are neutral rather than an exact Admiral skin.
+Colors and spacing are neutral and destination-configurable.
 
 ## Setup
 

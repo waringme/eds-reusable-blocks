@@ -1,6 +1,6 @@
 # Cards Folder
 
-Builds responsive cards from pages under a chosen folder, adapted from Barclays.
+Builds responsive cards from pages under a chosen folder.
 Each card has an optional image, H3 heading, summary and link pinned to its foot.
 The stylesheet includes its own card layout: **do not copy or load the source cards block**
 or its `--t-*` tokens. The source's branded tiles, fonts and importer are not dependencies.
