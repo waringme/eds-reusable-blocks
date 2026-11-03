@@ -8,6 +8,7 @@ This is a **block library**, not a configured EDS site.
 | Content Fragment | Five AEM CF models; feature lists, pods, steps, accordions, tabs, cover tables, media/text and product cards | [README](blocks/content-fragment/README.md) |
 | Cards Folder | Author/published folder listings, category, ordering, nested folders and responsive variants | [README](blocks/cards-folder/README.md) |
 | Brand Concierge | Page-local SDK/agent loading, explicit deployment configuration and consent | [README](blocks/brand-concierge/README.md) |
+| Weather | Live plain-text weather, local Edge Function routing and accessible loading/error states | [README](blocks/weather/README.md) |
 
 ## Copy into an EDS project
 
@@ -16,7 +17,7 @@ Let the standard EDS block loader load its JS and CSS. Each stylesheet is self-c
 and scoped; no source site's global tokens, fonts, images or other blocks are needed.
 `content-fragment` needs the destination's standard `scripts/aem.js` `getMetadata`;
 `brand-concierge` needs its `loadScript`. Do **not** copy a test helper in place of aem.js.
-No helper is required by `cards-folder`.
+No helper is required by `cards-folder` or `weather`.
 
 Each block README contains separate **component definition, model and filter JSON**
 snippets for Universal Editor. The `_*.json` files are combined source fragments, not
@@ -30,6 +31,8 @@ the supported settings. There are no active source deployment IDs or publish hos
 CF needs an AEM backend and published queries; Cards Folder needs an index (or author page
 APIs); Concierge needs provisioned services, allowed domains and approved consent/styling.
 These dependencies are not supplied by copying front-end files.
+Weather requires a separately deployed plain-text weather endpoint (default `/weather`,
+or `http://127.0.0.1:7676/weather` on local hosts); its README documents routing and CORS.
 
 ## Local validation
 

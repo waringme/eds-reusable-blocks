@@ -1,6 +1,7 @@
 import contentFragment from '../blocks/content-fragment/content-fragment.js';
 import cardsFolder from '../blocks/cards-folder/cards-folder.js';
 import brandConcierge from '../blocks/brand-concierge/brand-concierge.js';
+import weather from '../blocks/weather/weather.js';
 
 window.previewErrors = [];
 const reportError = console.error.bind(console);
@@ -18,6 +19,9 @@ function localImages(value) {
 }
 localImages(fragments);
 const index = await (await fetch('/tests/fixtures/query-index.json')).json();
+const weatherContent = await (await fetch('/tests/fixtures/weather.html')).text();
+const weatherHeading = new DOMParser().parseFromString(weatherContent, 'text/html')
+  .querySelector('.weather > div > div').textContent;
 index.data.push({ path: '/products/four', title: 'Four', description: 'Another choice', image: '/images/four.svg', cardOrder: '3' });
 window.hlx = { codeBasePath: '' };
 window.edsReusableBlocks = {
@@ -31,6 +35,9 @@ const fields = {
   'cover-comparison': 'coverComparisonByPath',
 };
 window.fetch = async (url) => {
+  if (url === 'http://127.0.0.1:7676/weather') {
+    return { ok: true, text: async () => 'Example town: 18 C, sunny' };
+  }
   if (url.includes('/graphql/execute.json/')) {
     const type = Object.keys(fields).find((key) => url.includes(`${key}-by-path`));
     const path = decodeURIComponent(url.split(';path=')[1]?.split(';variation=')[0]);
@@ -69,4 +76,6 @@ for (const classes of ['', 'three-up', 'four-up', 'small-titles', 'centered']) {
   await cardsFolder(add('cards-folder', ['/products', '4', ''], `card-order ${classes}`, `Folder: ${classes || 'default'}`));
 }
 await brandConcierge(add('brand-concierge', ['', '', ''], '', 'Concierge: configuration required (no external calls)'));
+await weather(add('weather', [weatherHeading], '', 'Weather: offline service response'));
+await weather(add('weather', ['Forecast'.repeat(30)], '', 'Weather: long heading'));
 window.previewReady = true;

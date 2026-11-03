@@ -61,6 +61,11 @@ try {
       remoteRequests: 0,
     });
     const tabs = page.locator('.content-fragment.tabs [role="tab"]');
+    const weather = page.locator('.weather').first();
+    assert.equal(await weather.locator('h2').textContent(), 'Current local weather');
+    assert.equal(await weather.locator('[role="status"]').textContent(), 'Example town: 18 C, sunny');
+    assert.equal(await weather.locator('.weather-result-success').count(), 1);
+    assert.equal(await weather.evaluate((node) => getComputedStyle(node).paddingTop), width < 768 ? '20px' : '24px');
     await tabs.first().focus();
     await page.keyboard.press('ArrowRight');
     assert.equal(await tabs.nth(1).getAttribute('aria-selected'), 'true');
@@ -70,6 +75,7 @@ try {
     if (screenshots) {
       await page.locator('.cards-folder.four-up').screenshot({ path: join(screenshots, `cards-${width}.png`) });
       await page.locator('.content-fragment.pods-colours').screenshot({ path: join(screenshots, `fragments-${width}.png`) });
+      await weather.screenshot({ path: join(screenshots, `weather-${width}.png`) });
     }
     console.log(`Browser fixture checks passed at ${width}px`);
   }

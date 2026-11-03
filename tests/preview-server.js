@@ -23,7 +23,8 @@ const server = createServer(async (request, response) => {
     const files = [
       '/tests/preview.html', '/tests/preview.js', '/tests/responsive.html',
       '/tests/fixtures/fragments.json', '/tests/fixtures/query-index.json',
-      ...['content-fragment', 'cards-folder', 'brand-concierge'].flatMap((name) => [
+      '/tests/fixtures/weather.html',
+      ...['content-fragment', 'cards-folder', 'brand-concierge', 'weather'].flatMap((name) => [
         `/blocks/${name}/${name}.js`, `/blocks/${name}/${name}.css`,
       ]),
     ];

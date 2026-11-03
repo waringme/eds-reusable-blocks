@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { parse } from 'yaml';
 
-for (const name of ['content-fragment', 'cards-folder', 'brand-concierge']) {
+for (const name of ['content-fragment', 'cards-folder', 'brand-concierge', 'weather']) {
   test(`${name} README registration snippets match the canonical block JSON`, async () => {
     const base = new URL(`../blocks/${name}/`, import.meta.url);
     const model = JSON.parse(await readFile(new URL(`_${name}.json`, base), 'utf8'));
