@@ -65,7 +65,7 @@ try {
     assert.equal(await weather.locator('h2').textContent(), 'Current local weather');
     assert.equal(await weather.locator('[role="status"]').textContent(), 'Example town: 18 C, sunny');
     assert.equal(await weather.locator('.weather-result-success').count(), 1);
-    assert.equal(await weather.evaluate((node) => getComputedStyle(node).paddingTop), width < 768 ? '20px' : '24px');
+    assert.equal(await weather.evaluate((node) => window.getComputedStyle(node).paddingTop), width < 768 ? '20px' : '24px');
     await tabs.first().focus();
     await page.keyboard.press('ArrowRight');
     assert.equal(await tabs.nth(1).getAttribute('aria-selected'), 'true');

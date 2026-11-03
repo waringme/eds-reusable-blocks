@@ -31,8 +31,30 @@ the supported settings. There are no active source deployment IDs or publish hos
 CF needs an AEM backend and published queries; Cards Folder needs an index (or author page
 APIs); Concierge needs provisioned services, allowed domains and approved consent/styling.
 These dependencies are not supplied by copying front-end files.
-Weather requires a separately deployed plain-text weather endpoint (default `/weather`,
-or `http://127.0.0.1:7676/weather` on local hosts); its README documents routing and CORS.
+
+## Weather block
+
+Copy `blocks/weather/` into your EDS project. Authors supply one optional heading row,
+defaulting to "Current local weather". The block fetches once and displays a plain-text
+weather summary in an accessible live status region, with loading and error messages.
+Its neutral, responsive styles do not require source-site tokens or assets.
+
+Deploy a weather Edge Function separately: the block requests `/weather` on published/author
+pages and `http://127.0.0.1:7676/weather` on `localhost` or `127.0.0.1`. The endpoint must
+return a successful HTTP response containing non-empty plain text. The function, provider
+credentials and location lookup are not bundled. For a different route, configure before
+decoration:
+
+```js
+window.edsReusableBlocks = {
+  ...window.edsReusableBlocks,
+  weather: { apiUrl: '/api/weather' },
+};
+```
+
+See the [Weather README](blocks/weather/README.md) for CORS requirements, theming, authoring,
+error handling and copy/paste **component definition, model and filter JSON** for Universal
+Editor. The combined registration fragment is [blocks/weather/_weather.json](blocks/weather/_weather.json).
 
 ## Local validation
 
